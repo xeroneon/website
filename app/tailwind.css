@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark,
+:root[class~="dark"] {
+}
+
+@font-face {
+  font-family: "Turkey";
+  src: url("/fonts/Turkey.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

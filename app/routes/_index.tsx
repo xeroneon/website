@@ -1,13 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import ProfileCard from "~/components/ProfileCard";
-import { Button } from "~/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "~/components/ui/card";
+import ProjectsList from "~/components/projects-list";
+import Timeline from "~/components/timeline";
 
 export const meta: MetaFunction = () => {
   return [
@@ -22,83 +15,37 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="flex flex-col items-center">
-      <ProfileCard />
-
       <main className="container mx-auto px-4 py-12">
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
           <p className="text-lg">
-            I'm a passionate web developer specializing in TypeScript and modern
-            web technologies. With a keen eye for detail and a love for clean,
-            efficient code, I create robust and scalable web applications that
-            deliver exceptional user experiences.
+            Andrew Vasquez is an experienced frontend developer with a strong
+            focus on user experience and performance optimization. With six
+            years of professional coding experience and an impressive 15-year
+            background in CSS, Andrew has developed a deep expertise in
+            JavaScript, TypeScript, and a wide array of web technologies. His
+            career spans from creating presentational websites to developing
+            complex, interactive internal tools for various industries.
+            <br />
+            <br /> Andrew's technical prowess is exemplified by his work on
+            map-heavy applications, where he significantly improved performance
+            by reducing load times from 10 seconds to under 1 second. He is
+            passionate about crafting efficient, user-friendly interfaces and
+            writing optimized code. Andrew holds a certificate from a coding
+            bootcamp hosted by Arizona State University and continually expands
+            his skills, currently exploring lower-level engineering and advanced
+            development workflows. His goals include mastering Neovim, deepening
+            his understanding of software engineering fundamentals, and creating
+            highly flexible and efficient APIs. Outside of his professional
+            endeavors, Andrew enjoys drone building and programming,
+            skateboarding, and strategic gaming.
           </p>
         </section>
         <section>
-          <h2 className="text-3xl font-bold mb-6">Projects</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="TypeScript Task Manager preview"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>TypeScript Task Manager</CardTitle>
-                <CardDescription>
-                  A full-stack task management application
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4">
-                  Built with React, TypeScript, and Node.js, this app showcases
-                  state management and RESTful API integration.
-                </p>
-                <Button variant="outline">View Project</Button>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="Next.js Blog Platform preview"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Next.js Blog Platform</CardTitle>
-                <CardDescription>
-                  A performant and SEO-friendly blog system
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4">
-                  Leveraging Next.js and TypeScript, this platform demonstrates
-                  server-side rendering and dynamic routing.
-                </p>
-                <Button variant="outline">View Project</Button>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="TypeScript Design System preview"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>TypeScript Design System</CardTitle>
-                <CardDescription>A reusable component library</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4">
-                  A collection of TypeScript-based UI components, showcasing
-                  advanced type usage and component architecture.
-                </p>
-                <Button variant="outline">View Project</Button>
-              </CardContent>
-            </Card>
-          </div>
+          <ProjectsList />
+        </section>
+        <section className="mt-8">
+          <Timeline />
         </section>
       </main>
     </div>

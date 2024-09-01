@@ -7,11 +7,12 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import "~/tailwind.css";
-import bg from "~/images/bg.png";
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { themeSessionResolver } from "./sessions.server";
 import { Theme, ThemeProvider, useTheme } from "remix-themes";
 import clsx from "clsx";
+import Footer from "./components/footer";
+import Header from "./components/header";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
@@ -42,7 +43,9 @@ function Document({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="bg-slate-900 text-slate-50">
+        <Header />
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

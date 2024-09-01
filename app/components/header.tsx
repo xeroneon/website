@@ -1,6 +1,6 @@
 import { PiGithubLogo, PiLinkedinLogo, PiEnvelope } from "react-icons/pi";
 import { Button } from "./ui/button";
-export default function ProfileCard() {
+export default function Header() {
   return (
     <div className="flex items-center w-full h-[200px] bg-slate-950">
       <div className="container mx-auto flex flex-1 flex-col px-4">
